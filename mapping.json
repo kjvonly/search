@@ -1,0 +1,46 @@
+{
+    "mappings": {
+        "properties": {
+            "book": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "chpt": {
+                "type": "long"
+            },
+            "text": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "number": {
+                "type": "long"
+            },
+            "words": {
+                "properties": {
+                    "text": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "class": {
+                        "type": "text"
+                    },
+                    "href": {
+                        "type": "text"
+                    }
+                }
+            }
+        }
+    }
+}
