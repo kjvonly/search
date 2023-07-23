@@ -1,5 +1,27 @@
+# SEARCH
+
+## Note
+
+need all.json and booknames.json from kjvdata repo
+
+## Local Setup
+
+### Start elastic search container
+
+```bash
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "xpack.security.enabled=false" -e "discovery.type=single-node"  docker.elastic.co/elasticsearch/elasticsearch:8.8.2-amd64
 ```
-# Note need all.json and booknames.json from kjvdata repo
+
+### Seed elastic search
+
+```bash
+git clone https://github.com/kjvonly/data.git ../data
+docker rm -f search && docker run --name search -v $(echo $PWD/../data/):/data search 'http://<YOUR_HOST_IP>'
+```
+
+### Some Test Commands
+
+```bash
 python parse.py > data-ndjson.json
 
 curl -X PUT \

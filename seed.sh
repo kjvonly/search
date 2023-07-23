@@ -18,5 +18,3 @@ curl -X PUT \
     -H 'Cache-Control: no-cache' \
     -H 'Content-Type: application/json' \
     --data-binary @data-ndjson.json
-
-sleep 10000
