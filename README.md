@@ -1,6 +1,6 @@
 ```
 # Note need all.json and booknames.json from kjvdata repo
-python parse.py > data-ndjosn.json
+python parse.py > data-ndjson.json
 
 curl -X PUT \
   http://localhost:9200/kjvonly/ \
